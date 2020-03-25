@@ -12,7 +12,7 @@ export default createGlobalStyle`
 
   html {
     font-size: 10px;
-    font-family: sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
     box-sizing: border-box;
   }
 
