@@ -5,7 +5,6 @@ import {
 } from '../styled/FormStyles';
 
 interface Props {
-  count: number;
   decrease: () => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   firstName: string;
@@ -14,28 +13,25 @@ interface Props {
 }
 
 const UserForm: React.FC<Props> = ({
-  count,
+
   decrease,
   handleChange, handleSubmit, firstName, lastName,
-}) => {
-  let a;
-  return (
-    <StyledForm onSubmit={handleSubmit}>
-      <StyledFormGroup>
-        <StyledFormLabel htmlFor="firstName">
-          <span>first name</span>
-          <StyledInput type="text" name="firstName" value={firstName} placeholder="First name" onChange={handleChange} />
-        </StyledFormLabel>
-      </StyledFormGroup>
-      <StyledFormGroup>
-        <StyledFormLabel htmlFor="lastName">
-          <span>last name</span>
-          <StyledInput type="text" name="lastName" value={lastName} placeholder="Last name" onChange={handleChange} />
-        </StyledFormLabel>
-      </StyledFormGroup>
-      <StyledBtn onClick={decrease}>Prev</StyledBtn>
-      <StyledBtn>Next</StyledBtn>
-    </StyledForm>
-  );
-};
+}) => (
+  <StyledForm onSubmit={handleSubmit}>
+    <StyledFormGroup>
+      <StyledFormLabel htmlFor="firstName">
+        <span>first name</span>
+        <StyledInput type="text" name="firstName" value={firstName} placeholder="First name" onChange={handleChange} required />
+      </StyledFormLabel>
+    </StyledFormGroup>
+    <StyledFormGroup>
+      <StyledFormLabel htmlFor="lastName">
+        <span>last name</span>
+        <StyledInput type="text" name="lastName" value={lastName} placeholder="Last name" onChange={handleChange} required />
+      </StyledFormLabel>
+    </StyledFormGroup>
+    <StyledBtn onClick={decrease}>Prev</StyledBtn>
+    <StyledBtn>Next</StyledBtn>
+  </StyledForm>
+);
 export default UserForm;

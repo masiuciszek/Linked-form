@@ -1,26 +1,30 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable no-shadow */
 /* eslint-disable @typescript-eslint/interface-name-prefix */
 import React from 'react';
 import Layout from './components/layout/Layout';
 import { Container } from './components/styled/Wrapper';
 import UserForm from './components/formUserDetails/UserForm';
+import PersonalForm from './components/formPersenalDetails/Personal';
+import Confirm from './components/confirm/Confirm';
 
 
 export interface IFormData {
   firstName: string;
   lastName: string;
-  age: number | null;
+  age: string;
   email: string;
-  techSkills: string[] | null;
+  techSkills: string;
 }
 
 function App() {
   const [formState, setFormState] = React.useState<IFormData>({
     firstName: '',
     lastName: '',
-    age: null,
+    age: '',
     email: '',
-    techSkills: null,
+    techSkills: 'Haskell',
   });
   const [count, setCount] = React.useState<number>(0);
 
@@ -49,7 +53,6 @@ function App() {
       case 1:
         return (
           <UserForm
-            count={count}
             decrease={decrease}
             handleSubmit={handleSubmit}
             firstName={formState.firstName}
@@ -58,9 +61,20 @@ function App() {
           />
         );
       case 2:
-        return <h3>CWKS</h3>;
+        return (
+          <PersonalForm
+            decrease={decrease}
+            handleSubmit={handleSubmit}
+            age={formState.age}
+            email={formState.email}
+            techSkills={formState.techSkills}
+            handleChange={handleChange}
+          />
+        );
+      case 3:
+        return <Confirm />;
       default:
-        return <h4>End</h4>;
+        return <h4>Thank you</h4>;
     }
   };
 
@@ -70,7 +84,7 @@ function App() {
         <Container>
           {renderForm(count)}
           {count === 0 && (
-            <button onClick={() => setCount(count + 1)}>Start</button>
+            <button type="button" onClick={() => setCount(count + 1)}>Start</button>
           )}
         </Container>
       </>

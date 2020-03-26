@@ -20,3 +20,8 @@ export const StyledInput = styled.input`
 export const StyledBtn = styled.button`
 
 `;
+
+
+export const StyledSelect = styled.select`
+
+`;
