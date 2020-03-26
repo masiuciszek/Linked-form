@@ -13,18 +13,16 @@ export const NavTitle = styled.div`
   padding: 1.6rem .5rem;
   width: 35rem;
   text-align:center;
-  box-shadow: ${({ theme }) => theme.shadow.lightShadow};
-
   border-radius: 1.14em;
   h4{
-    text-shadow:
+    /* text-shadow:
     1px 0px 1px #ccc, 0px 1px 1px #eee,
     2px 1px 1px #ccc, 1px 2px 1px #eee,
     3px 2px 1px #ccc, 2px 3px 1px #eee,
     4px 3px 1px #ccc, 3px 4px 1px #eee,
     5px 4px 1px #ccc, 4px 5px 1px #eee,
     6px 5px 1px #ccc, 5px 6px 1px #eee,
-    7px 6px 1px #ccc;
+    7px 6px 1px #ccc; */
     text-transform: uppercase;
     letter-spacing: .2rem;
     color:${(props) => props.theme.colors.white};

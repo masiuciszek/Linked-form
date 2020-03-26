@@ -15,6 +15,7 @@ export const BtnPrimary = styled.button`
   outline: none;
   position: relative;
   transition: ${(props) => props.theme.transition.mainTransition};
+  border-radius:1rem;
   &:focus{
     top: 5px;
   }
@@ -29,6 +30,12 @@ export const BtnPrimary = styled.button`
 `;
 
 
-export const FormBtn = styled.button`
-
+export const FormBtn = styled(BtnPrimary)`
+  background: ${({ theme }) => theme.colors.offWhite};
+  color: ${({ theme }) => theme.colors.primary};
+  border: 2px solid ${(props) => props.theme.colors.common};
+  &:hover{
+    background: ${({ theme }) => theme.colors.common};
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;

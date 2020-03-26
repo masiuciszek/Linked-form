@@ -69,6 +69,7 @@ function App() {
       case 1:
         return (
           <UserForm
+            title="Enter your name"
             decrease={decrease}
             handleSubmit={handleSubmit}
             firstName={formState.firstName}
@@ -79,6 +80,7 @@ function App() {
       case 2:
         return (
           <PersonalForm
+            title="Enter your detail"
             decrease={decrease}
             handleSubmit={handleSubmit}
             age={formState.age}

@@ -16,11 +16,34 @@ const Confirm: React.FC<Props> = ({ formState, decrease, finalSubmit }) => (
   <StyledWrapper>
     <Title mainTitle="Check your" subTitle="User details" />
     <ConfirmData>
-      <div>{formState.firstName}</div>
-      <div>{formState.lastName}</div>
-      <div>{formState.email}</div>
-      <div>{formState.age}</div>
-      <div>{formState.techSkills}</div>
+      <div>
+        <span>FirstName</span>
+        {formState.firstName}
+      </div>
+      <div>
+        {' '}
+        <span>lastName</span>
+        {' '}
+        {formState.lastName}
+      </div>
+      <div>
+        {' '}
+        <span>Email</span>
+        {' '}
+        {formState.email}
+      </div>
+      <div>
+        {' '}
+        <span>age</span>
+        {' '}
+        {formState.age}
+      </div>
+      <div>
+        {' '}
+        <span>tech sill</span>
+        {' '}
+        {formState.techSkills}
+      </div>
     </ConfirmData>
     <BtnGroup>
       <FormBtn onClick={decrease}>prev</FormBtn>

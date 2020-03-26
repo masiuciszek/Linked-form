@@ -6,6 +6,7 @@ import {
 import { FormBtn } from '../styled/Button';
 
 interface Props {
+  title: string;
   decrease: () => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   firstName: string;
@@ -14,11 +15,12 @@ interface Props {
 }
 
 const UserForm: React.FC<Props> = ({
-
+  title,
   decrease,
   handleChange, handleSubmit, firstName, lastName,
 }) => (
   <StyledForm onSubmit={handleSubmit}>
+    <h3>{title}</h3>
     <StyledFormGroup>
       <StyledFormLabel htmlFor="firstName">
         <span>first name</span>

@@ -8,6 +8,7 @@ import {
 import { FormBtn } from '../styled/Button';
 
 interface Props {
+  title: string;
   decrease: () => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   age: string;
@@ -17,9 +18,11 @@ interface Props {
 }
 
 const PersonalForm: React.FC<Props> = ({
+  title,
   handleChange, decrease, age, email, techSkills, handleSubmit,
 }) => (
   <StyledForm onSubmit={handleSubmit}>
+    <h3>{title}</h3>
     <StyledFormGroup>
       <StyledFormLabel htmlFor="email">
         <span>email</span>
@@ -36,7 +39,7 @@ const PersonalForm: React.FC<Props> = ({
 
     <StyledFormGroup>
       <StyledFormLabel htmlFor="techSkills">
-        <span>techSkills</span>
+        <span className="techSkills">techSkills</span>
         <StyledSelect value={techSkills} onChange={handleChange} name="techSkills">
           <option value="" disabled>--Choose your skill--</option>
           <option value="javascript">javascript</option>

@@ -3,13 +3,15 @@ import styled from 'styled-components';
 
 export const StyledForm = styled.form`
   padding: 2rem 1rem;
-  /* TODO:delete */
-  border: 2px solid red;
   width: 100%;
   box-shadow: ${({ theme }) => theme.shadow.lightShadow};
   display: flex;
   flex-direction: column;
-
+  h3{
+    text-align: center;
+    padding: 1rem 0;
+    text-transform: capitalize;
+  }
   button{
     width: 12rem;
   }
@@ -17,8 +19,6 @@ export const StyledForm = styled.form`
 
 export const StyledFormGroup = styled.div`
   padding: 1rem .5rem;
-  /* TODO:delete */
-  border: 2px solid blue;
   width: 80%;
   margin: 0 auto;
  `;
@@ -33,6 +33,9 @@ export const StyledFormLabel = styled.label`
       font-size: 1.6rem;
       font-weight: 600;
       padding: .5rem;
+    }
+    .techSkills{
+      text-align: center;
     }
  `;
 
@@ -63,5 +66,18 @@ export const BtnGroup = styled.div`
 `;
 
 export const StyledSelect = styled.select`
+    background: #332;
+    color: #fff;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
+    margin: 0 auto;
+    border-radius:1rem;
+    width: 70%;
+    outline:none;
 
 `;
