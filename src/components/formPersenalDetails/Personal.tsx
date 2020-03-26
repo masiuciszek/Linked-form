@@ -2,9 +2,10 @@
 /* eslint-disable react/prop-types */
 import * as React from 'react';
 import {
-  StyledForm, StyledFormGroup, StyledFormLabel, StyledInput, StyledBtn,
+  StyledForm, StyledFormGroup, StyledFormLabel, StyledInput,
   StyledSelect,
 } from '../styled/FormStyles';
+import { FormBtn } from '../styled/Button';
 
 interface Props {
   decrease: () => void;
@@ -12,7 +13,7 @@ interface Props {
   age: string;
   email: string;
   techSkills: string;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement|HTMLSelectElement>) => void;
 }
 
 const PersonalForm: React.FC<Props> = ({
@@ -36,7 +37,7 @@ const PersonalForm: React.FC<Props> = ({
     <StyledFormGroup>
       <StyledFormLabel htmlFor="techSkills">
         <span>techSkills</span>
-        <StyledSelect name="techSkills" value={techSkills}>
+        <StyledSelect value={techSkills} onChange={handleChange} name="techSkills">
           <option value="" disabled>--Choose your skill--</option>
           <option value="javascript">javascript</option>
           <option value="haskell">Haskell</option>
@@ -48,8 +49,8 @@ const PersonalForm: React.FC<Props> = ({
     </StyledFormGroup>
 
 
-    <StyledBtn onClick={decrease}>Prev</StyledBtn>
-    <StyledBtn>Next</StyledBtn>
+    <FormBtn onClick={decrease}>Prev</FormBtn>
+    <FormBtn>Next</FormBtn>
   </StyledForm>
 );
 export default PersonalForm;

@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import * as React from 'react';
 import {
-  StyledForm, StyledFormGroup, StyledFormLabel, StyledInput, StyledBtn,
+  StyledForm, StyledFormGroup, StyledFormLabel, StyledInput,
 } from '../styled/FormStyles';
+import { FormBtn } from '../styled/Button';
 
 interface Props {
   decrease: () => void;
@@ -30,8 +31,9 @@ const UserForm: React.FC<Props> = ({
         <StyledInput type="text" name="lastName" value={lastName} placeholder="Last name" onChange={handleChange} required />
       </StyledFormLabel>
     </StyledFormGroup>
-    <StyledBtn onClick={decrease}>Prev</StyledBtn>
-    <StyledBtn>Next</StyledBtn>
+    <FormBtn onClick={decrease}>Prev</FormBtn>
+
+    <FormBtn>Next</FormBtn>
   </StyledForm>
 );
 export default UserForm;

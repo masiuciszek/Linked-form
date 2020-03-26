@@ -8,6 +8,7 @@ import { Container } from './components/styled/Wrapper';
 import UserForm from './components/formUserDetails/UserForm';
 import PersonalForm from './components/formPersenalDetails/Personal';
 import Confirm from './components/confirm/Confirm';
+import Welcome from './components/welcome/Welcome';
 
 
 export interface IFormData {
@@ -24,7 +25,7 @@ function App() {
     lastName: '',
     age: '',
     email: '',
-    techSkills: 'Haskell',
+    techSkills: '',
   });
   const [count, setCount] = React.useState<number>(0);
 
@@ -34,22 +35,36 @@ function App() {
       setCount(count - 1);
     }
   };
+  const increase = (): void => {
+    setCount(count + 1);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
-    setCount(count + 1);
+    increase();
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>): void => {
     const { name, value } = e.target;
     setFormState({ ...formState, [name]: value });
+  };
+
+  const finalSubmit = (): void => {
+    setCount(0);
+    setFormState({
+      firstName: '',
+      lastName: '',
+      age: '',
+      email: '',
+      techSkills: '',
+    });
   };
 
   const renderForm = (count: number): JSX.Element => {
     switch (count) {
       case 0:
-        return <h1>Welcome</h1>;
+        return <Welcome increase={increase} />;
       case 1:
         return (
           <UserForm
@@ -72,7 +87,7 @@ function App() {
           />
         );
       case 3:
-        return <Confirm />;
+        return <Confirm formState={formState} decrease={decrease} finalSubmit={finalSubmit} />;
       default:
         return <h4>Thank you</h4>;
     }
@@ -80,14 +95,9 @@ function App() {
 
   return (
     <Layout>
-      <>
-        <Container>
-          {renderForm(count)}
-          {count === 0 && (
-            <button type="button" onClick={() => setCount(count + 1)}>Start</button>
-          )}
-        </Container>
-      </>
+      <Container>
+        {renderForm(count)}
+      </Container>
     </Layout>
   );
 }
