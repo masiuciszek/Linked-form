@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { StyledConfirm, ConfirmData } from './Styled.Confirm';
+import { ConfirmData } from './Styled.Confirm';
 import Title from '../styled/Title';
 import { IFormData } from '../../App';
 import { FormBtn } from '../styled/Button';
+import { StyledWrapper } from '../styled/Wrapper';
+import { BtnGroup } from '../styled/FormStyles';
 
 interface Props {
   formState: IFormData;
@@ -11,8 +13,8 @@ interface Props {
 }
 
 const Confirm: React.FC<Props> = ({ formState, decrease, finalSubmit }) => (
-  <StyledConfirm>
-    <Title mainTitle="Thank you" subTitle="Hope you enjoy" />
+  <StyledWrapper>
+    <Title mainTitle="Check your" subTitle="User details" />
     <ConfirmData>
       <div>{formState.firstName}</div>
       <div>{formState.lastName}</div>
@@ -20,8 +22,10 @@ const Confirm: React.FC<Props> = ({ formState, decrease, finalSubmit }) => (
       <div>{formState.age}</div>
       <div>{formState.techSkills}</div>
     </ConfirmData>
-    <FormBtn onClick={decrease}>prev</FormBtn>
-    <FormBtn onClick={finalSubmit}>Confirm</FormBtn>
-  </StyledConfirm>
+    <BtnGroup>
+      <FormBtn onClick={decrease}>prev</FormBtn>
+      <FormBtn onClick={finalSubmit}>Confirm</FormBtn>
+    </BtnGroup>
+  </StyledWrapper>
 );
 export default Confirm;

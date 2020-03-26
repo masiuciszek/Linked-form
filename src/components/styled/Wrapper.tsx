@@ -27,6 +27,7 @@ export const Container = styled.div`
 
 
 export const StyledWrapper = styled.div`
+  border-radius: 1rem;
   padding: 1rem;
   background: ${(props) => props.theme.colors.common};
   width: 90%;

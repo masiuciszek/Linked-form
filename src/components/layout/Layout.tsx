@@ -3,6 +3,7 @@ import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from '../../utils/theme';
 import GlobalStyles from '../styled/GlobalStyles';
+import NavBar from './nav/Navbar';
 
 interface Props {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
+    <NavBar />
     <main className="MainApp">{children}</main>
   </ThemeProvider>
 );

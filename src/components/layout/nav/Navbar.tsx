@@ -1,14 +1,15 @@
 import * as React from 'react';
+import { StyledNav, NavTitle } from './StyledNav';
 
 interface Props {
 
 }
 
 const NavBar: React.FC<Props> = () => (
-  <div>
-    {' '}
-    <h1> Legia CWSKS </h1>
-    {' '}
-  </div>
+  <StyledNav>
+    <NavTitle>
+      <h4>Linked Form</h4>
+    </NavTitle>
+  </StyledNav>
 );
 export default NavBar;

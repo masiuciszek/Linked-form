@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import * as React from 'react';
 import {
-  StyledForm, StyledFormGroup, StyledFormLabel, StyledInput,
+  StyledForm, StyledFormGroup, StyledFormLabel, StyledInput, BtnGroup,
   StyledSelect,
 } from '../styled/FormStyles';
 import { FormBtn } from '../styled/Button';
@@ -47,10 +47,10 @@ const PersonalForm: React.FC<Props> = ({
         </StyledSelect>
       </StyledFormLabel>
     </StyledFormGroup>
-
-
-    <FormBtn onClick={decrease}>Prev</FormBtn>
-    <FormBtn>Next</FormBtn>
+    <BtnGroup>
+      <FormBtn onClick={decrease}>Prev</FormBtn>
+      <FormBtn>Next</FormBtn>
+    </BtnGroup>
   </StyledForm>
 );
 export default PersonalForm;

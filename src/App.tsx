@@ -52,6 +52,7 @@ function App() {
 
   const finalSubmit = (): void => {
     setCount(0);
+    alert('Thank you for Register');
     setFormState({
       firstName: '',
       lastName: '',
