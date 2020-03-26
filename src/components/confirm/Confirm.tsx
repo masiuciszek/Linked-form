@@ -14,7 +14,7 @@ interface Props {
 
 const Confirm: React.FC<Props> = ({ formState, decrease, finalSubmit }) => (
   <StyledWrapper>
-    <Title mainTitle="Check your" subTitle="User details" />
+    <Title mainTitle="your details" />
     <ConfirmData>
       <div>
         <span>FirstName</span>

@@ -21,6 +21,7 @@ const StyledTitle = styled.section`
   text-align: center;
   letter-spacing: .1rem;
   color: ${({ theme }) => theme.colors.white};
+  text-transform: capitalize;
   h3{
     padding: 2rem 0;
     font-size: 4.5rem;
@@ -30,4 +31,14 @@ const StyledTitle = styled.section`
   }
   border-bottom: 2px solid ${({ theme }) => theme.colors.offWhite};
   margin-bottom: 1.5rem;
+
+  @media(max-width:372px){
+    h3{
+      font-size: 3rem;
+    }
+    strong{
+      font-size: 2rem;
+    }
+
+  }
 `;

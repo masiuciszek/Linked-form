@@ -15,4 +15,11 @@ export const ConfirmData = styled.section`
     text-transform: capitalize;
     }
   }
+
+  @media(max-width:372px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
 `;

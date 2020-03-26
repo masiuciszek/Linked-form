@@ -15,6 +15,12 @@ export const StyledForm = styled.form`
   button{
     width: 12rem;
   }
+  /* 372 */
+  @media(max-width:372px){
+    h3{
+      font-size: 2rem;
+    }
+  }
  `;
 
 export const StyledFormGroup = styled.div`

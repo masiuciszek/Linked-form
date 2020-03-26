@@ -11,8 +11,8 @@ export const StyledNav = styled.nav`
 export const NavTitle = styled.div`
   margin: 0 auto;
   padding: 1.6rem .5rem;
-  width: 35rem;
-  text-align:center;
+  width: 90%;
+  text-align: center;
   border-radius: 1.14em;
   h4{
     /* text-shadow:
@@ -26,5 +26,11 @@ export const NavTitle = styled.div`
     text-transform: uppercase;
     letter-spacing: .2rem;
     color:${(props) => props.theme.colors.white};
+  }
+
+  @media(max-width:372px){
+    h4{
+      font-size: 2.6rem;
+    }
   }
 `;
