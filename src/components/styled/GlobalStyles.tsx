@@ -13,10 +13,10 @@ export default createGlobalStyle`
   html {
     font-size: 10px;
     font-family: 'Red Hat Display', sans-serif;
-    box-sizing: border-box;
   }
 
   body {
+    box-sizing: border-box;
     min-height: 100vh;
     flex-direction: column;
     height: 100%;
